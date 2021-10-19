@@ -21,3 +21,7 @@ def findEncodings(images):
         encode = face_recognition.face_encodings(img)[0]
         encodeList.append(encode)
     return encodeList
+encodeListKnown = findEncodings(images)
+print('Encoding Complete')
+
+cap = cv2.VideoCapture(0)
