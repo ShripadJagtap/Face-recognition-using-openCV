@@ -19,3 +19,7 @@ results = face_recognition.compare_faces([encodeElon],encodeTest)
 faceDis = face_recognition.face_distance([encodeElon],encodeTest)
 print(results,faceDis)
 cv2.putText(imgTest,f'{results} {round(faceDis[0],2)}', (50,50), cv2.FONT_HERSHEY_SIMPLEX,1,(0,0,255),2)
+
+cv2.imshow('Elon Musk' ,imgElon)
+cv2.imshow('Elon Test' ,imgTest)
+cv2.waitKey(0)
