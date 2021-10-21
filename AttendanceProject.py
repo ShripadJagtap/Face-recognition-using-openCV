@@ -33,3 +33,9 @@ while True:
 
     facesCurFrame = face_recognition.face_locations(imgS)
     encodesCurFrame = face_recognition.face_encodings(imgS,facesCurFrame)
+
+    for encodeFace,faceLoc in zip(encodesCurFrame, facesCurFrame):
+        matches = face_recognition.compare_faces(encodeListKnown,encodeFace)
+        faceDis = face_recognition.face_distance(encodeListKnown,encodeFace)
+        print(faceDis)
+        matchIndex = np.argmin(faceDis)
